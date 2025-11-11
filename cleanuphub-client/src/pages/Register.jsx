@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   createUserWithEmailAndPassword,
@@ -207,6 +207,7 @@ const Register = () => {
           </p>
         </div>
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

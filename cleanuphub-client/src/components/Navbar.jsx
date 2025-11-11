@@ -129,9 +129,28 @@ const Navbar = () => {
       <li>
         <NavLink to="/">Home</NavLink>
       </li>
-      <li>
-        <NavLink to="/issues">Issues</NavLink>
-      </li>
+      {user ? (
+        <li>
+          <NavLink to="/all-issues">All Issues</NavLink>
+        </li>
+      ) : (
+        <li>
+          <NavLink to="/issues">Issues</NavLink>
+        </li>
+      )}
+      {user && (
+        <>
+          {/* <li>
+            <NavLink to="/all-issues">All Issues</NavLink>
+          </li> */}
+          <li>
+            <NavLink to="/add-issue">Add Issue</NavLink>
+          </li>
+          <li>
+            <NavLink to="/my-contributions">My Contributions</NavLink>
+          </li>
+        </>
+      )}
     </>
   );
 
@@ -196,7 +215,7 @@ const Navbar = () => {
               className="w-10 h-10 rounded-full cursor-pointer border-2 border-gray-300"
             />
             {dropdownOpen && (
-              <ul className="absolute right-0 mt-2 w-36 bg-white border rounded shadow-lg py-2">
+              <ul className="absolute right-0 mt-2 w-36 bg-white border rounded shadow-lg py-2 z-10">
                 <li className="px-4 py-2 hover:bg-gray-100">
                   <Link to="/profile">Profile</Link>
                 </li>

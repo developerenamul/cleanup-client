@@ -11,6 +11,9 @@ import Register from "./pages/Register.jsx";
 import Demo from "./pages/Demo.jsx";
 import PrivateRoute from "./routes/PrivateRoute.jsx";
 import AuthProvider from "./context/AuthProvider.jsx";
+import IssuesDetails from "./pages/IssuesDetails.jsx";
+import AddIssue from "./pages/AddIssue.jsx";
+import AllIssues from "./pages/AllIssues.jsx";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +28,29 @@ const router = createBrowserRouter([
       {
         path: "/issues",
         element: <Issues></Issues>,
+      },
+      {
+        path: "/all-issues",
+        element: <AllIssues></AllIssues>,
+        loader: () => fetch("http://localhost:5000/issues"),
+      },
+      {
+        path: "/add-issue",
+        element: <AddIssue></AddIssue>,
+      },
+      {
+        path: "/issues/:id",
+        element: <IssuesDetails></IssuesDetails>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/issues/${params.id}`),
+      },
+      {
+        path: "/my-contributions",
+        element: (
+          <PrivateRoute>
+            <MyContributions />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
