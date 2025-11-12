@@ -55,14 +55,15 @@ const AddIssue = () => {
           name="category"
           className="select select-bordered w-full"
           required
+          defaultValue="" // ✅ defaultValue দিয়ে প্রাথমিক অবস্থা নির্ধারণ
         >
-          <option disabled selected>
+          <option value="" disabled>
             Select Category
           </option>
-          <option>Garbage</option>
-          <option>Illegal Construction</option>
-          <option>Broken Public Property</option>
-          <option>Road Damage</option>
+          <option value="Garbage">Garbage</option>
+          <option value="Illegal Construction">Illegal Construction</option>
+          <option value="Broken Public Property">Broken Public Property</option>
+          <option value="Road Damage">Road Damage</option>
         </select>
 
         <input
