@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router";
+import { Link, useLoaderData } from "react-router";
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { toast, ToastContainer } from "react-toastify";
@@ -104,12 +104,30 @@ const IssuesDetails = () => {
             </p>
           </div>
 
-          <button
-            onClick={() => setShowModal(true)}
-            className="btn btn-sm bg-green-600 text-white mt-auto hover:bg-green-700 hover:scale-105 hover:shadow-md transition-all duration-300 mt-6"
-          >
-            Pay Clean-Up Contribution
-          </button>
+          {user ? (
+            <button
+              onClick={() => setShowModal(true)}
+              className="btn btn-sm bg-green-600 text-white mt-auto hover:bg-green-700 hover:scale-105 hover:shadow-md transition-all duration-300 mt-6"
+            >
+              Pay Clean-Up Contribution
+            </button>
+          ) : (
+            <div
+              className="btn
+              btn-sm
+              bg-green-600
+              text-white
+              mt-auto
+              hover:bg-green-700
+              hover:scale-105
+              hover:shadow-md
+              transition-all
+              duration-300
+              mt-6"
+            >
+              <Link to={"/login"}>Login To See All Issues</Link>
+            </div>
+          )}
         </div>
       </div>
 

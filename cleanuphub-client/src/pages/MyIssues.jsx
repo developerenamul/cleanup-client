@@ -67,7 +67,7 @@ const MyIssues = () => {
       {/* shadow-md rounded-lg */}
       {/* table w-full  table*/}
       {myIssues.length === 0 ? (
-        <p>No issues found.</p>
+        <p>No issues Added Yet.</p>
       ) : (
         <div className="overflow-x-auto  md:overflow-x-visible">
           <table className="table table-zebra w-full min-w-[600px] md:min-w-0">

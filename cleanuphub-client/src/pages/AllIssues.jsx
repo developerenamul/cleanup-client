@@ -1,9 +1,6 @@
-// import { useEffect, useState } from "react";
 import { Link, useLoaderData } from "react-router";
 
 const AllIssues = () => {
-  //   const [issues, setIssues] = useState([]);
-
   const issues = useLoaderData();
 
   return (
@@ -41,7 +38,17 @@ const AllIssues = () => {
               <div className="card-actions justify-end mt-4">
                 <Link
                   to={`/issues/${issue._id}`}
-                  className="btn btn-sm btn-neutral hover:bg-black text-white"
+                  className="btn
+              btn-sm
+              bg-green-600
+              text-white
+              mt-auto
+              hover:bg-green-700
+              hover:scale-105
+              hover:shadow-md
+              transition-all
+              duration-300
+              mt-6"
                 >
                   See Details
                 </Link>
