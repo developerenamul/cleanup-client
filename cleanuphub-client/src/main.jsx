@@ -14,6 +14,7 @@ import AuthProvider from "./context/AuthProvider.jsx";
 import IssuesDetails from "./pages/IssuesDetails.jsx";
 import AddIssue from "./pages/AddIssue.jsx";
 import AllIssues from "./pages/AllIssues.jsx";
+import MyContributions from "./pages/MyContributions.jsx";
 
 const router = createBrowserRouter([
   {

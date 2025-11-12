@@ -106,7 +106,7 @@ const IssuesDetails = () => {
 
           <button
             onClick={() => setShowModal(true)}
-            className="btn btn-neutral mt-6"
+            className="btn btn-sm bg-green-600 text-white mt-auto hover:bg-green-700 hover:scale-105 hover:shadow-md transition-all duration-300 mt-6"
           >
             Pay Clean-Up Contribution
           </button>
